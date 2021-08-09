@@ -3,13 +3,43 @@ let iClickTrans = document.querySelectorAll(".Home__category--item");
 let allIarrow = document.querySelectorAll(".Home i.fa-chevron-down");
 console.log(allIarrow);
 window.addEventListener("", function (e) {
-  //  iClickTrans.addEventListener("clcik",function(e)){
-  //    console.log(e.clientX,e.clientY)
-  //  }
   console.log(e.clientX, e.clientY);
 });
 let index1; //index so sánh làm biếng để lưu cái index của cái home__Category--items mà mình click vô so sánh với cái click ở sau
 let transformIndex;
+let flatfon = document.querySelector(".platform");
+// console.log(flatfon);
+let addBlock = function (index) {
+  if (index == 0) flatfon.classList.add("displayBlock");
+};
+let removeBlock = function (index) {
+  if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4)
+    flatfon.classList.remove("displayBlock");
+};
+let toggleHien = function (element) {
+  if (element.currentTarget.classList.contains("hien")) {
+    element.currentTarget.classList.remove("hien");
+  } else {
+    element.currentTarget.classList.add("hien");
+  }
+};
+let addAndRemoveBlock = function (e, index) {
+  removeBlock(index);
+  if (e.currentTarget.classList.contains("hien")) {
+    addBlock(index);
+  }
+};
+let tranformIArrowE = function () {
+  arr.map((e) => {
+    let arr = [...e.children];
+
+    arr.map((e) => {
+      if (e.parentElement.parentElement.classList.contains("hien")) {
+        e.classList.add("transtrom180_acti");
+      }
+    });
+  });
+};
 iClickTrans.forEach((event, index) => {
   // console.log(Math.random());
   event.addEventListener("click", function (e) {
@@ -22,13 +52,9 @@ iClickTrans.forEach((event, index) => {
         e.classList.remove("hien");
       }
     });
-    if (e.currentTarget.classList.contains("hien")) {
-      e.currentTarget.classList.remove("hien");
-    } else {
-      e.currentTarget.classList.add("hien");
-    }
+    toggleHien(e);
     index1 = e.currentTarget;
-    // e.parent;
+    addAndRemoveBlock(e, index);
     /* transform  i(arrow )in nav js */
     let arr = [...currentItem];
     //remove tất cả class transtrom
@@ -51,7 +77,7 @@ iClickTrans.forEach((event, index) => {
 /* click button reponsive */
 let ulE = document.querySelector(".Home__category--button ul");
 let liEs = document.querySelectorAll(".Home__category--button ul li");
-ulE.addEventListener("click", function (e) {
+let buttonReFun = function () {
   let liEsArr = [...liEs];
   ulE.classList.toggle("tranform360");
   for (let i = 0; i < liEsArr.length; i++) {
@@ -67,6 +93,9 @@ ulE.addEventListener("click", function (e) {
       liEsArr[i].classList.add("tranform45re");
     }
   }
+};
+ulE.addEventListener("click", function (e) {
+  buttonReFun();
 });
 //   console.log([...arr]);
 
@@ -80,7 +109,7 @@ test2.addEventListener("click", function (e) {
 });
 let arr = ["skills", "processes", "teams", "products", "workflows"];
 let i = 0;
-setInterval(function (e) {
+let transFormTextFunc = function () {
   tranTextE.innerText = arr[i];
   if (tranTextE.classList.contains("ani")) {
     tranTextE.classList.remove("ani");
@@ -88,4 +117,14 @@ setInterval(function (e) {
   tranTextE.classList.add("ani");
   i++;
   if (i > arr.length - 1) i = 0;
+};
+setInterval(function () {
+  transFormTextFunc();
 }, 3000);
+
+/*test setporerty click */
+
+///cách get css property nè
+// console.log([flatfon]);
+const styleFlatform = getComputedStyle(flatfon);
+const displayFlatform = styleFlatform.display;

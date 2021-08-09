@@ -6,7 +6,7 @@
   /* overflow-x:hidden; */
 }
 :root {
-  --none--after: none;
+  --none: none;
 }
 /*main css*/
 
@@ -14,12 +14,19 @@
 #main {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  /* overflow-y: hidden; */
 }
 
+/*ẩn hiện thanh scrollbar   */
+/* body::-webkit-scrollbar {
+  width: auto;
+  display: block;
+} */
 body {
   /* background-color:; */
   background-color: black;
-  overflow-x: hidden;
+  /* overflow: hidden; */
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 .nav {
@@ -207,6 +214,7 @@ ul:target li {
   width: 100%;
   /* height: 600px; */
   aspect-ratio: 16/9;
+  z-index: 100;
 }
 .main--intro {
   position: absolute;
@@ -254,10 +262,12 @@ ul:target li {
   width: 100vw;
   height: 75vh;
   background-color: #e6d7e0;
-  opacity: 0.7;
+  opacity: 0;
   position: absolute;
   top: 13vh;
-  display: none;
+  transition: all 0.5s;
+  transform: rotateX(90deg);
+  transform-origin: 0% 0%;
 }
 .platform__container {
   width: 100%;
@@ -268,6 +278,9 @@ ul:target li {
   width: 30%;
   height: 100%;
   background-color: black;
+}
+.platform__left:hover {
+  cursor: pointer;
 }
 .platform__right {
 }
@@ -653,11 +666,16 @@ h3.create--better {
     }
     .slider img {
       width: 100%;
-      /* height: 600px; */
-      /* aspect-ratio: 16/9; */
       object-fit: cover;
       height: 600px;
       object-position: center center;
     }
   }
+}
+.displayBlock {
+  transform: rotateX(0deg);
+  width: 100vw;
+  height: 75vh;
+  opacity: 0.8;
+  /* display: block; */
 }
