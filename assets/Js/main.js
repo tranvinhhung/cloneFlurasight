@@ -27,13 +27,16 @@ let addAndRemoveBlock = function (e, index) {
     addBlock(index);
   }
 };
-let tranformIArrowE = function () {
+let tranformIArrowE = function (arr) {
   arr.map((e) => {
-    let arr = [...e.children];
+    let arr2 = [...e.children];
 
-    arr.map((e) => {
+    arr2.map((e) => {
       if (e.parentElement.parentElement.classList.contains("hien")) {
         e.classList.add("transtrom180_acti");
+        mainE.classList.add("opacity__active");
+      } else if (!e.parentElement.parentElement.classList.contains("hien")) {
+        mainE.classList.remove("opacity__active");
       }
     });
   });
@@ -60,18 +63,8 @@ iClickTrans.forEach((event, index) => {
       e.classList.remove("transtrom180_acti");
     });
     //kiem tra xem nếu có lớp class(.hien)thì ta để còn ko remove luôn
-    arr.map((e) => {
-      let arr = [...e.children];
-
-      arr.map((e) => {
-        if (e.parentElement.parentElement.classList.contains("hien")) {
-          e.classList.add("transtrom180_acti");
-          mainE.classList.add("opacity__active");
-        } else {
-          mainE.classList.remove("opacity__active");
-        }
-      });
-    });
+    tranformIArrowE(arr);
+    // tranformIArrowE();
   });
 });
 
@@ -105,9 +98,9 @@ let tranTextE = document.querySelector(".transftext");
 
 let test2 = document.querySelector(".Home__icon");
 
-test2.addEventListener("click", function (e) {
-  console.log(e.target);
-});
+// test2.addEventListener("click", function (e) {
+//   console.log(e.target);
+// });
 let arr = ["skills", "processes", "teams", "products", "workflows"];
 let i = 0;
 let transFormTextFunc = function () {
@@ -135,10 +128,10 @@ window.addEventListener("scroll", function () {
     let topCoure = e.getBoundingClientRect().top;
     let topPoint = (120 / 100) * vh;
     if (topCoure < topPoint) {
-      console.log(topCoure, topPoint);
+      // console.log(topCoure, topPoint);
       e.classList.add("active");
     } else {
-      console.log(topCoure, topPoint);
+      // console.log(topCoure, topPoint);
       e.classList.remove("active");
     }
   });
@@ -162,6 +155,43 @@ let linkImage = [
 let imageInsert = document.querySelector(".slider__images");
 for (let i = 0; i < linkImage.length; i++) {
   let imgSoure = `<img src=${linkImage[i]} alt="" />`;
-  console.log(imgSoure);
+  // console.log(imgSoure);
   imageInsert.insertAdjacentHTML("afterbegin", imgSoure);
 }
+
+///test tinng
+// let formE = document.querySelector(".form");
+// formE.addEventListener("change", function (e) {
+//   let optionEs = document.querySelectorAll(".lass");
+//   if (e.target.name === "fav_language") {
+//     console.log(e.target.value);
+//   } else console.log("chọn sai");
+// });
+//mình sẽ tạo mớ mảng list menu ở đây
+let menu1 = document.querySelector(".platform");
+let menuLists = [];
+let removeAllWhenClickOutSite = function (e1) {
+  menu1.classList.remove("displayBlock");
+  e1.classList.remove("hien");
+  mainE.classList.remove("opacity__active");
+  allIarrow.forEach((e) => {
+    e.classList.remove("transtrom180_acti");
+  });
+};
+
+let handleFunctionClickRemoveOnBody = function (e) {
+  iClickTrans.forEach((e1, index) => {
+    console.log(e1);
+    if (
+      e.target.closest(".Home__category--item") ||
+      e.target.closest(".platform")
+    ) {
+      return;
+    } else if (e.target.closest("body")) {
+      removeAllWhenClickOutSite(e1);
+    }
+  });
+};
+document.addEventListener("click", function (e) {
+  handleFunctionClickRemoveOnBody(e);
+});
