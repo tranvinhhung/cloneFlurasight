@@ -146,9 +146,9 @@ const displayFlatform = styleFlatform.display;
 //hieu ung doi anh slider dep
 let linkImage = [
   "https://c.wallhere.com/photos/f7/82/futuristic_tech_geometry-1330193.jpg!d",
-  "https://images.unsplash.com/photo-1575761344173-aa186491c120?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-  "https://images.unsplash.com/photo-1575761344173-aa186491c120?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-  "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+  "https://zicxa.com/vi//uploaded/files/hinh-nen-4k-dep-cho-may-tinh-laptop-ipad-dien-thoai-di-dong-57.jpg",
+  "https://zicxa.com/vi//uploaded/files/hinh-nen-4k-dep-cho-may-tinh-laptop-ipad-dien-thoai-di-dong-49.jpg",
+  "https://zicxa.com/vi//uploaded/files/hinh-nen-4k-dep-cho-may-tinh-laptop-ipad-dien-thoai-di-dong-43.jpg",
   "https://c.wallhere.com/photos/f7/82/futuristic_tech_geometry-1330193.jpg!d",
 ];
 
@@ -181,7 +181,7 @@ let removeAllWhenClickOutSite = function (e1) {
 
 let handleFunctionClickRemoveOnBody = function (e) {
   iClickTrans.forEach((e1, index) => {
-    console.log(e1);
+    // console.log(e1);
     if (
       e.target.closest(".Home__category--item") ||
       e.target.closest(".platform")

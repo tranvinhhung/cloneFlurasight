@@ -1,0 +1,24 @@
+{
+  "name": "cloneplurasights",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.37.5",
+    "three": "^0.131.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sasstocss": "sass assets/sass/index.scss assets/css/sass.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tranvinhhung/cloneFlurasight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tranvinhhung/cloneFlurasight/issues"
+  },
+  "homepage": "https://github.com/tranvinhhung/cloneFlurasight#readme"
+}
