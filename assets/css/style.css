@@ -31,9 +31,11 @@
 body {
   /* background-color:; */
   background-color: black;
-  /* overflow: hidden; */
-  font-family: "Atkinson Hyperlegible", sans-serif;
+  overflow-x: hidden;
+  font-family: "font-family: 'Poppins', sans-serif,Atkinson Hyperlegible",
+    sans-serif;
   /* visibility: hidden; */
+  scroll-behavior: smooth;
 }
 
 .nav {
@@ -269,23 +271,11 @@ ul:target li {
 .slider {
   width: 100%;
   position: relative;
-  margin-top: 6em;
-}
-.slider img {
-  width: 100vw;
-  display: block;
-  height: 90vh;
-  object-fit: cover;
-  transition: all 1s;
 }
 
 .slider__images {
   display: flex;
   align-items: center;
-  /* max-height: 100%; */
-  width: fit-content;
-  animation: aniImage 10s infinite ease;
-  animation-fill-mode: backwards;
 }
 @keyframes aniImage {
   25% {
@@ -373,8 +363,7 @@ ul:target li {
 /*end  platform css*/
 .button--intro {
   display: flex;
-  position: relative;
-  top: 0;
+  width: 100%;
   margin-top: 35px;
 }
 .view {
@@ -715,11 +704,7 @@ ul:target li {
 .card__intro--item:hover::after {
   height: 100%;
 }
-.keep__up {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-}
+
 .card__intro--itemContai {
   display: flex;
   flex-direction: column;
@@ -770,115 +755,55 @@ ul:target li {
   margin-top: auto;
 }
 /*reponsive*/
-@media screen and (max-width: 1200px) {
+/* 
+@media screen and (max-width: 740px) {
   .intro-techno {
     display: none;
   }
   .core .all--core {
-    flex: 1;
+    display: flex;
+    width: 100%;
+    height: fit-content;
   }
 
   .core--1 {
+    padding: 1%;
+    margin: 1%;
+    width: 64%;
     margin: 2rem;
   }
-  .img--content-2 {
-    width: 100%;
-    height: 100%;
-  }
-
-  .img--content-2 img {
-    object-fit: contain;
-    /* height: 500px; */
-    width: 100%;
-  }
-  .Home__category {
-    visibility: hidden;
-  }
-  .Home__category--info-all {
-    /* display: none; */
-    justify-content: flex-end;
-  }
-  .Home__category--try,
-  .Home__category--item {
+  .context-our-intro {
     display: none;
   }
-  .Home__category--button {
-    display: block;
+  .img--content-2 {
+    width: 50%;
   }
-  section.Home__category--info-look,
-  .Home__category--button {
-    visibility: visible;
-    padding: 2vh;
-  }
-  .main--intro {
-    width: 95vw;
-    height: 100vh;
-    right: 0;
-  }
-  .main--intro .text--main {
+  .img--content-2 img {
     width: 100%;
-    font-size: 30px;
-    font-weight: bolder;
   }
-  .button--intro {
-    justify-content: center;
-    margin-top: 0;
+  .context--our--text {
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
   }
-  .text--des {
-    max-height: 30%;
-    line-height: 18px;
-    font-size: large;
-    font-weight: 500;
-    word-spacing: 1px;
-  }
-  @media screen and (max-width: 740px) {
-    .intro-techno {
-      display: none;
-    }
-    .core .all--core {
-      display: flex;
-      width: 100%;
-      height: fit-content;
-    }
 
-    .core--1 {
-      padding: 1%;
-      margin: 1%;
-      width: 64%;
-      margin: 2rem;
-    }
-    .context-our-intro {
-      display: none;
-    }
-    .img--content-2 {
-      width: 50%;
-    }
-    .img--content-2 img {
-      width: 100%;
-    }
-    .context--our--text {
-      flex-direction: column;
-      flex: 1;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .img--content-2 {
-      flex: 1;
-      width: 100%;
-    }
-    .slider img {
-      width: 100%;
-      object-fit: cover;
-      height: 600px;
-      object-position: center center;
-    }
-    .slider__images {
-      animation-name: animateMobi;
-    }
+  .img--content-2 {
+    flex: 1;
+    width: 100%;
   }
-}
-@keyframes animateMobi {
+  .slider img {
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+    object-position: center center;
+  }
+  .slider__images {
+    animation-name: animateMobi;
+  }
+} */
+
+/* @keyframes animateMobi {
   25% {
     transform: translatex(-100%);
   }
@@ -891,7 +816,7 @@ ul:target li {
   100% {
     transform: translatex(-400%);
   }
-}
+} */
 
 .displayBlock {
   transform: rotateX(0deg);
@@ -1023,6 +948,7 @@ ul:target li {
 
 .keep__up {
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   background-color: black;
+  position: relative;
 }

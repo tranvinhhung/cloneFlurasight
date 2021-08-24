@@ -1,5 +1,72 @@
-ul {
-  color: black;
+header {
+  height: 96px;
+}
+@media screen and (max-width: 739px) {
+  header .nav .Home__category {
+    display: none;
+  }
+  header .nav .Home__category--button {
+    display: block;
+  }
+}
+
+#main .slider {
+  height: 100vh;
+}
+#main .slider__images video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100%;
+  opacity: 0.8;
+  display: block;
+}
+@media screen and (max-width: 739px) {
+  #main .main--intro {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #main .text--main {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  #main .text--des {
+    text-align: center;
+    font-size: 1rem;
+  }
+  #main .button--intro {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .core .all--core {
+    flex-direction: column;
+  }
+  .core .all--core .dbl {
+    width: 80%;
+  }
+  .core .intro-techno {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .see--what--new--al .context--our--text {
+    flex-direction: column;
+  }
+  .see--what--new--al .context--our--text .context-our-intro {
+    width: 100%;
+  }
+  .see--what--new--al .card__intro {
+    flex-direction: column;
+  }
+  .see--what--new--al .card__intro--item {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=sass.css.map */

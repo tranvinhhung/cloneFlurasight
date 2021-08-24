@@ -1,0 +1,5 @@
+@mixin mobi {
+  @media screen and (max-width: 739px) {
+    @content;
+  }
+}

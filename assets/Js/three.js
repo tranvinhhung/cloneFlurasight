@@ -33,7 +33,7 @@ import * as THREE from "./../../node_modules/three/build/three.module.js";
 // animate();
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+// document.body.appendChild(renderer.domElement);
 
 const camera = new THREE.PerspectiveCamera(
   45,

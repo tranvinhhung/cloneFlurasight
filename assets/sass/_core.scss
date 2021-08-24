@@ -1,0 +1,14 @@
+.core {
+  @include mobi {
+    .all--core {
+      flex-direction: column;
+      //   width: 80%;
+      .dbl {
+        width: 80%;
+      }
+    }
+    .intro-techno {
+      display: none;
+    }
+  }
+}

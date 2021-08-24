@@ -1,4 +1,5 @@
 @import "variable";
-ul {
-  color: $primari-color;
-}
+@import "mixin";
+@import "header";
+@import "core";
+@import "seeW";

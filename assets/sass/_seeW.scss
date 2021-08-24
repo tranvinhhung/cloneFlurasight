@@ -1,0 +1,17 @@
+.see--what--new--al {
+  @include mobi {
+    .context--our--text {
+      flex-direction: column;
+
+      .context-our-intro {
+        width: 100%;
+      }
+    }
+    .card__intro {
+      flex-direction: column;
+      &--item {
+        width: 100%;
+      }
+    }
+  }
+}

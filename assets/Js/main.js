@@ -152,12 +152,12 @@ let linkImage = [
   "https://c.wallhere.com/photos/f7/82/futuristic_tech_geometry-1330193.jpg!d",
 ];
 
-let imageInsert = document.querySelector(".slider__images");
-for (let i = 0; i < linkImage.length; i++) {
-  let imgSoure = `<img src=${linkImage[i]} alt="" />`;
-  // console.log(imgSoure);
-  imageInsert.insertAdjacentHTML("afterbegin", imgSoure);
-}
+// let imageInsert = document.querySelector(".slider__images");
+// for (let i = 0; i < linkImage.length; i++) {
+//   let imgSoure = `<img src=${linkImage[i]} alt="" />`;
+//   // console.log(imgSoure);
+//   imageInsert.insertAdjacentHTML("afterbegin", imgSoure);
+// }
 
 ///test tinng
 // let formE = document.querySelector(".form");
@@ -194,4 +194,32 @@ let handleFunctionClickRemoveOnBody = function (e) {
 };
 document.addEventListener("click", function (e) {
   handleFunctionClickRemoveOnBody(e);
+});
+
+///lick lênh màn hình sẽ hiện chấm đỏ
+document.querySelector("body").addEventListener("click", function (e) {
+  console.log(e.screenX, e.screenY, e.clientX, e.clientY);
+  let div = document.createElement("div");
+
+  div.style.width = 50 + "px";
+  div.style.height = 50 + "px";
+  div.style.backgroundColor = "red";
+  div.style.position = "absolute";
+  div.style.top = e.pageY + "px";
+  div.style.left = e.pageX + "px";
+  div.style.transform = "translate(-50%,50%)";
+  div.style.borderRadius = 50 + "%";
+  div.style.zIndex = "10000";
+  div.style.transform = "scale(0)";
+  div.style.transition = "all 2s";
+  console.log(div);
+  document.querySelector("body").insertAdjacentElement("afterbegin", div);
+  setTimeout((e) => {
+    div.style.transform = "scale(50)";
+    div.style.opacity = 0;
+    div.style.zIndex = "-1";
+    setTimeout((e) => {
+      div.remove();
+    }, 5000);
+  }, 1);
 });
