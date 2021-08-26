@@ -51,6 +51,7 @@ body {
   /* border-bottom: 1px solid #fff; */
   color: aliceblue;
   display: flex;
+  /* background-color: rgb(red, green, blue); */
 }
 .Home {
   width: 100%;
@@ -230,16 +231,6 @@ ul {
   position: relative;
   transition: all 0.5s;
   padding: 2px;
-}
-ul > li {
-  width: 2rem;
-  height: 0.1rem;
-  background-color: #e6d7e0;
-  /* color: #ec008c; */
-  margin: 0.5em;
-  list-style-type: none;
-  transition: all 0.5s;
-  position: relative;
 }
 
 .tranform45 {
@@ -944,11 +935,4 @@ ul:target li {
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
-}
-
-.keep__up {
-  width: 100vw;
-  height: 50vh;
-  background-color: black;
-  position: relative;
 }
